@@ -34,15 +34,7 @@ function fithub_register_custom_post_types()
         'menu_position'      => 7,
         'menu_icon'          => 'dashicons-admin-users',
         'supports'           => array('title', 'editor', 'thumbnail'),
-        'template'           => array(
-            array(
-                'core/paragraph',
-                array(
-                    'placeholder' => 'Add your introduction here...'
-                )
-            ),
-            array('core/button',),
-        ),
+        'template'           => array(array('core/paragraph')),
         'template_lock'      => 'all',
     );
 
@@ -93,15 +85,7 @@ function fithub_register_custom_post_types()
         'menu_position'      => 5,
         'menu_icon'          => 'dashicons-archive',
         'supports'           => array('title', 'editor', 'thumbnail'),
-        'template'           => array(
-            array(
-                'core/paragraph',
-                array(
-                    'placeholder' => 'Add your introduction here...'
-                )
-            ),
-            array('core/button',),
-        ),
+        'template'           => array(array('core/paragraph')),
         'template_lock'     => 'all',
     );
 
