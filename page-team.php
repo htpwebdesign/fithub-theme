@@ -61,7 +61,7 @@ get_header();
 						echo '<p>' . get_field('team_description') . '</p>';
 					}
 					if (get_field('cta_button')) {
-						echo get_field('cta_button');
+						echo the_field('cta_button');
 					}
 					
 					echo "</div>";
