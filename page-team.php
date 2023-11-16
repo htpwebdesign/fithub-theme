@@ -18,17 +18,26 @@ get_header();
 	<main id="primary" class="site-main">
 
 		<?php
-		while ( have_posts() ) :
-			the_post();
+		// while ( have_posts() ) :
+		// 	the_post();
 
-			get_template_part( 'template-parts/content', 'page' );
+		// 	get_template_part( 'template-parts/content', 'page' );
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+		// 	// If comments are open or we have at least one comment, load up the comment template.
+		// 	if ( comments_open() || get_comments_number() ) :
+		// 		comments_template();
+		// 	endif;
 
-		endwhile; // End of the loop.
+		// endwhile; // End of the loop.
+		$args = array( 'post_type' => 'fithub_team', 'posts_per_page' => 10 );
+		$loop = new WP_Query( $args );
+		while ( $loop->have_posts() ) : $loop->the_post();
+		the_post();
+		the_title();
+		echo '<div class="entry-content">';
+		the_content();
+		echo '</div>';
+		endwhile;
 		?>
 
 	</main><!-- #main -->

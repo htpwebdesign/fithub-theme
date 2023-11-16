@@ -38,7 +38,7 @@ function fithub_register_custom_post_types()
         'template_lock'      => 'all',
     );
 
-    register_post_type('fithub-team', $args);
+    register_post_type('fithub_team', $args);
 }
 add_action('init', 'fithub_register_custom_post_types');
 
