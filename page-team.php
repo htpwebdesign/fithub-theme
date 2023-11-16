@@ -40,6 +40,38 @@ get_header();
 		endwhile;
 		?>
 
+		<?php
+		$args = array(
+			'post_type'      => 'fithub-team',
+			'posts_per_page' => -1,
+		);
+
+		$query = new WP_Query($args);
+
+		if ($query->have_posts()) {
+			echo '<section><h2>All Team</h2><article>';
+			while ($query->have_posts()) {
+				$query->the_post();
+				if (function_exists('get_field')) {
+					echo "<div>";
+					echo '<h3>' . get_the_title() . '</h3>';
+					
+					// Adjust the following conditions based on your requirements
+					if (get_field('team_description')) {
+						echo '<p>' . get_field('team_description') . '</p>';
+					}
+					if (get_field('cta_button')) {
+						echo get_field('cta_button');
+					}
+					
+					echo "</div>";
+				}
+			}
+			wp_reset_postdata();
+			echo '</article></section>';
+		}
+		?>
+
 	</main><!-- #main -->
 
 <?php
