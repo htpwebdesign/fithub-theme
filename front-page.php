@@ -31,6 +31,7 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 
+		<!-- Team Secton -->
 		<section>
 		<?php
 			$args = array(
@@ -55,6 +56,7 @@ get_header();
 		?>
 		</section>
 
+		<!-- Service Secton -->
 		<section>
 		<?php
 			$args = array(
@@ -72,6 +74,68 @@ get_header();
 			if ($product_query->have_posts()) {
 				while ($product_query->have_posts()) {
 					$product_query->the_post();
+			?>
+				<article>
+					<?php the_post_thumbnail('medium'); ?>
+					<a href="<?php the_permalink(); ?>">
+						<h3><?php the_title(); ?></h3>
+					</a>
+				</article>
+			<?php
+				}
+				wp_reset_postdata();
+			}
+		?>
+		</section>
+
+		<!-- Product Secton -->
+		<section>
+		<?php
+			$args = array(
+				'post_type'	=> 'product',
+				'posts_per_page' => 3,
+				'order' => 'ASC',
+				'orderby' => 'title',
+				'tax_query'      => array(
+					array(
+						'taxonomy' => 'product_cat',
+						'field' => 'slug',
+						'terms' => 'services',
+						'operator' => 'NOT IN',
+					)
+				)
+			);
+			$product_query = new WP_Query($args);
+			if ($product_query->have_posts()) {
+				while ($product_query->have_posts()) {
+					$product_query->the_post();
+			?>
+				<article>
+					<?php the_post_thumbnail('medium'); ?>
+					<a href="<?php the_permalink(); ?>">
+						<h3><?php the_title(); ?></h3>
+					</a>
+				</article>
+			<?php
+				}
+				wp_reset_postdata();
+			}
+		?>
+		</section>
+
+		<!-- Post Secton -->
+		<section>
+		<?php
+			$args = array(
+				'post_type'	=> 'post',
+				'posts_per_page' => 3,
+				'order' => 'ASC',
+				'orderby' => 'title',
+			);
+			$blog_query = new WP_Query($args);
+			if ($blog_query->have_posts()) {
+				while ($blog_query->have_posts()) {
+					$blog_query->the_post();
 			?>
 				<article>
 					<?php the_post_thumbnail('medium'); ?>
