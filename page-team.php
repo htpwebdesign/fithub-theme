@@ -61,7 +61,10 @@ get_header();
 						echo '<p>' . get_field('team_description') . '</p>';
 					}
 					if (get_field('cta_button')) {
-						echo the_field('cta_button');
+						$link = get_field("cta_button");
+						if ($link): ?>
+							<a class="button" href="<?php echo esc_url($link); ?>">Services</a>
+						<?php endif;
 					}
 					
 					echo "</div>";
