@@ -51,11 +51,16 @@ get_header();
 					if (get_field('team_description')) {
 						echo '<p>' . get_field('team_description') . '</p>';
 					}
-					if (get_field('cta_button')) {
-						$link_title = $link['title'];
-						$link = get_field("cta_button");
+					if (get_field('first_service')) {
+						$link = get_field("first_service");
 						if ($link): ?>
-                            <a class="button" href="<?php echo esc_url($link); ?>"><?php echo esc_html( $link_title ); ?></a>
+                            <a class="button" href="<?php echo esc_url( $link['url'] ); ?>"><?php echo esc_html( $link['title'] ); ?></a>
+						<?php endif;
+					}
+					if (get_field('second_service')) {
+						$link = get_field("second_service");
+						if ($link): ?>
+                            <a class="button" href="<?php echo esc_url( $link['url'] ); ?>"><?php echo esc_html( $link['title'] ); ?></a>
 						<?php endif;
 					}
 					
