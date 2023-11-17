@@ -31,6 +31,7 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 
+		<section>
 		<?php
 			$args = array(
 				'post_type'	=> 'fithub-team',
@@ -52,6 +53,31 @@ get_header();
 				wp_reset_postdata();
 			}
 		?>
+		</section>
+
+		<section>
+		<?php
+			$args = array(
+				'post_type'	=> 'fithub-team',
+				'posts_per_page' => -1
+			);
+			$blog_query = new WP_Query($args);
+			if ($blog_query->have_posts()) {
+				while ($blog_query->have_posts()) {
+					$blog_query->the_post();
+			?>
+				<article>
+					<?php the_post_thumbnail('medium'); ?>
+					<a href="<?php the_permalink(); ?>">
+						<h3><?php the_title(); ?></h3>
+					</a>
+				</article>
+			<?php
+				}
+				wp_reset_postdata();
+			}
+		?>
+		</section>
 
 	</main><!-- #main -->
 

@@ -225,3 +225,22 @@ if ( ! function_exists( 'fithub_theme_woocommerce_header_cart' ) ) {
 		<?php
 	}
 }
+
+function custom_pre_get_posts_query( $q ) {
+
+	if (!$q->is_main_query() || !is_shop()) return;
+	
+	$tax_query = (array) $q->get( 'tax_query' );
+	
+	$tax_query[] = array(
+		   'taxonomy' => 'product_cat',
+		   'field' => 'slug',
+		   'terms' => array( 'services' ),
+		   'operator' => 'NOT IN'
+	);
+	
+	
+	$q->set( 'tax_query', $tax_query );
+	
+	}
+	add_action( 'woocommerce_product_query', 'custom_pre_get_posts_query' );
