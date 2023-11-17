@@ -49,9 +49,10 @@ get_header();
 		$query = new WP_Query($args);
 
 		if ($query->have_posts()) {
-			echo '<section><h2>All Team</h2><article>';
+			echo '<section><h2>Our Team</h2><article>';
 			while ($query->have_posts()) {
 				$query->the_post();
+				the_post_thumbnail('medium');
 				if (function_exists('get_field')) {
 					echo "<div>";
 					echo '<h3>' . get_the_title() . '</h3>';
@@ -63,8 +64,8 @@ get_header();
 					if (get_field('cta_button')) {
 						$link = get_field("cta_button");
 						if ($link): ?>
-							
-							<button onclick="location.href='<?php echo esc_url($link); ?>'">Service</button>
+			
+							<button onclick="location.href='<?php echo esc_url($link); ?>'">Services</button>
 						<?php endif;
 					}
 					

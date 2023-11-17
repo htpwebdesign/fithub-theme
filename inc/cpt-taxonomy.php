@@ -12,7 +12,7 @@ function fithub_register_custom_post_types()
         'new_item'           => __('New Team'),
         'edit_item'          => __('Edit Team'),
         'view_item'          => __('View Team'),
-        'all_items'          => __('All Team'),
+        'all_items'          => __('Our Team'),
         'search_items'       => __('Search Team'),
         'parent_item_colon'  => __('Parent Team:'),
         'not_found'          => __('No Team found.'),
