@@ -37,10 +37,10 @@ get_header();
 				'post_type'	=> 'fithub-team',
 				'posts_per_page' => -1
 			);
-			$blog_query = new WP_Query($args);
-			if ($blog_query->have_posts()) {
-				while ($blog_query->have_posts()) {
-					$blog_query->the_post();
+			$team_query = new WP_Query($args);
+			if ($team_query->have_posts()) {
+				while ($team_query->have_posts()) {
+					$team_query->the_post();
 			?>
 				<article>
 					<?php the_post_thumbnail('medium'); ?>
@@ -58,13 +58,20 @@ get_header();
 		<section>
 		<?php
 			$args = array(
-				'post_type'	=> 'fithub-team',
-				'posts_per_page' => -1
+				'post_type'	=> 'product',
+				'posts_per_page' => 3,
+				'tax_query'      => array(
+					array(
+						'taxonomy' => 'product_cat',
+						'field' => 'slug',
+						'terms' => 'services'
+					)
+				)
 			);
-			$blog_query = new WP_Query($args);
-			if ($blog_query->have_posts()) {
-				while ($blog_query->have_posts()) {
-					$blog_query->the_post();
+			$product_query = new WP_Query($args);
+			if ($product_query->have_posts()) {
+				while ($product_query->have_posts()) {
+					$product_query->the_post();
 			?>
 				<article>
 					<?php the_post_thumbnail('medium'); ?>
