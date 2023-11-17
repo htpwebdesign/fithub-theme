@@ -33,7 +33,7 @@ function fithub_register_custom_post_types()
         'hierarchical'       => false,
         'menu_position'      => 7,
         'menu_icon'          => 'dashicons-admin-users',
-        'supports'           => array('title', 'editor', 'thumbnail'),
+        'supports'           => array('title', 'thumbnail'),
         'template'           => array(array('core/paragraph')),
         'template_lock'      => 'all',
     );

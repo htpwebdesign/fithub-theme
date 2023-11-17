@@ -34,7 +34,7 @@ get_header();
 		<?php
 			$args = array(
 				'post_type'	=> 'fithub-team',
-				'posts_per_page' => 3
+				'posts_per_page' => -1
 			);
 			$blog_query = new WP_Query($args);
 			if ($blog_query->have_posts()) {
