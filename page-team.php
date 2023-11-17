@@ -63,7 +63,8 @@ get_header();
 					if (get_field('cta_button')) {
 						$link = get_field("cta_button");
 						if ($link): ?>
-							<a class="button" href="<?php echo esc_url($link); ?>">Services</a>
+							
+							<button onclick="location.href='<?php echo esc_url($link); ?>'">Service</button>
 						<?php endif;
 					}
 					
