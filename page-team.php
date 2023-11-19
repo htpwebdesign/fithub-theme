@@ -39,12 +39,13 @@ get_header();
 		$query = new WP_Query($args);
 
 		if ($query->have_posts()) {
-			echo '<section><h2>Our Team</h2><article>';
+			echo '<section>
+			<h2>Our Team</h2>';
 			while ($query->have_posts()) {
 				$query->the_post();
-				the_post_thumbnail('medium');
 				if (function_exists('get_field')) {
-					echo "<div>";
+					echo "<article>";
+					the_post_thumbnail('medium');
 					echo '<h3>' . get_the_title() . '</h3>';
 					
 					// Adjust the following conditions based on your requirements
@@ -63,17 +64,15 @@ get_header();
                             <a class="button" href="<?php echo esc_url( $link['url'] ); ?>"><?php echo esc_html( $link['title'] ); ?></a>
 						<?php endif;
 					}
-					
-					echo "</div>";
+					echo "</article>";
 				}
 			}
 			wp_reset_postdata();
-			echo '</article></section>';
+			echo '</section>';
 		}
 		?>
 
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

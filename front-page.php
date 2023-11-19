@@ -33,6 +33,7 @@ get_header();
 
 		<!-- Team Secton -->
 		<section>
+		<h2>FitHub Team</h2>
 		<?php
 			$args = array(
 				'post_type'	=> 'fithub-team',
@@ -58,29 +59,30 @@ get_header();
 
 		<!-- Service Secton -->
 		<section>
-		<?php
-			$args = array(
-				'post_type'	=> 'product',
-				'posts_per_page' => 3,
-				'tax_query'      => array(
-					array(
-						'taxonomy' => 'product_cat',
-						'field' => 'slug',
-						'terms' => 'services'
+			<h2>Services We Offer</h2>
+			<?php
+				$args = array(
+					'post_type'	=> 'product',
+					'posts_per_page' => 3,
+					'tax_query'      => array(
+						array(
+							'taxonomy' => 'product_cat',
+							'field' => 'slug',
+							'terms' => 'services'
+						)
 					)
-				)
-			);
+				);
 			$product_query = new WP_Query($args);
 			if ($product_query->have_posts()) {
 				while ($product_query->have_posts()) {
 					$product_query->the_post();
 			?>
-				<article>
-					<?php the_post_thumbnail('medium'); ?>
-					<a href="<?php the_permalink(); ?>">
-						<h3><?php the_title(); ?></h3>
-					</a>
-				</article>
+			<article>
+				<?php the_post_thumbnail('medium'); ?>
+				<a href="<?php the_permalink(); ?>">
+					<h3><?php the_title(); ?></h3>
+				</a>
+			</article>
 			<?php
 				}
 				wp_reset_postdata();
@@ -90,6 +92,7 @@ get_header();
 
 		<!-- Product Secton -->
 		<section>
+		<h2>Our Array of Products</h2>
 		<?php
 			$args = array(
 				'post_type'	=> 'product',
@@ -124,6 +127,7 @@ get_header();
 		</section>
 
 		<!-- Post Secton -->
+		<h2>React to Our Blog</h2>
 		<section>
 		<?php
 			$args = array(
@@ -153,5 +157,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();
