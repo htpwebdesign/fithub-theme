@@ -13,6 +13,10 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
+			<?php 
+				// google map in footer
+				echo do_shortcode( '[wpgmza id="1"]' ); 
+			?>
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'fithub-theme' ) ); ?>">
 				<?php
 				/* translators: %s: CMS name, i.e. WordPress. */
