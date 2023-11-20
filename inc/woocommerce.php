@@ -239,9 +239,7 @@ function custom_pre_get_posts_query( $q ) {
 		   'terms' => array( 'services' ),
 		   'operator' => 'NOT IN'
 	);
-	
-	
+
 	$q->set( 'tax_query', $tax_query );
-	
-	}
-	add_action( 'woocommerce_product_query', 'custom_pre_get_posts_query' );
+}
+add_action( 'woocommerce_product_query', 'custom_pre_get_posts_query' );
