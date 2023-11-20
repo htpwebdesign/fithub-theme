@@ -12,6 +12,67 @@ if ( ! defined( '_S_VERSION' ) ) {
 	define( '_S_VERSION', '1.0.0' );
 }
 
+// login and wp dashboard customization
+// login logo change
+// login logo change
+function my_login_logo() { ?>
+    <style type="text/css">
+        #login h1 a, .login h1 a {
+
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/icons/fithub.svg);
+        height:140px;
+        width:140px;
+        background-size: 140px 140px;
+        background-repeat: no-repeat;
+            padding-bottom: 30px;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
+// change login url of logo
+function my_login_logo_url() {
+	// return home_url();
+    return 'https://codex.wordpress.org/Customizing_the_Login_Form';
+	// works with any links
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+function my_login_logo_url_title() {
+    return 'Custom Title';
+}
+add_filter( 'login_headertext', 'my_login_logo_url_title' );
+
+// calling style-login.css
+function my_login_stylesheet() {
+    wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/style-login.css' );
+}
+add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
+
+// customize dashboard widgets
+//add a custom dashboard widget for admins
+add_action('wp_dashboard_setup', 'my_custom_dashboard_widget');
+  
+function my_custom_dashboard_widget() {
+    global $wp_meta_boxes;
+    wp_add_dashboard_widget('custom_fun_widget', 'Fun Time', 'custom_dashboard_fun');
+}
+ 
+function custom_dashboard_fun() {
+	echo 'My record is 178. Try and
+    <a href="https://gearoid.me/pokemon/" target="_blank">beat my score</a>';
+}
+
+// remove default dashboards outside of using screen options
+function remove_dashboard_meta() {
+    remove_meta_box('dashboard_primary', 'dashboard', 'normal'); //Removes the 'WordPress News' widget
+    remove_meta_box('dashboard_right_now', 'dashboard', 'normal'); //Removes the 'At a Glance' widget
+	remove_meta_box('dashboard_quick_press', 'dashboard', 'normal'); //Removes the 'At a Glance' widget
+}
+add_action('admin_init', 'remove_dashboard_meta');
+
+// END OF CODE DEMO
+
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
