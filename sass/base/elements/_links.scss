@@ -20,3 +20,69 @@ a {
 		outline: 0;
 	}
 }
+
+.services-menu, .products-menu {
+	list-style-type: none;
+	padding: 0;
+	text-align: center; 
+  
+	article {
+	  display: inline-block;
+	  margin: 10px;
+	  transition: transform 0.3s ease-in-out; 
+  
+	  &:hover {
+		transform: scale(1.1);
+	  }
+  
+	  a {
+		text-decoration: none;
+		display: block;
+		padding: 15px;
+		background-color: #8A0000; 
+		color: #fff;
+		font-family: 'Arial', sans-serif;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		border-radius: 5px;
+		h3 {
+		  margin: 0;
+		  font-size: 18px;
+		  font-weight: bold;
+		  color: #FFFFFF; 
+		  transition: color 0.3s ease-in-out;
+  
+		  &:hover {
+			color: #e74c3c; 
+		  }
+		}
+	  }
+	}
+  }
+  
+  .blog-menu {
+	article {
+	  margin-bottom: 20px;
+  
+	  a {
+		text-decoration: none;
+		color: #333;
+  
+		&:hover {
+		  color: #ff6600;
+		}
+	  }
+  
+	  h3 {
+		font-size: 1.5rem;
+		color: #8A0000;
+		
+		margin-bottom: 10px;
+  
+		&:hover {
+		color: #0077cc; // Change the text color on hover
+		}
+	  }
+	}
+  }
+   
