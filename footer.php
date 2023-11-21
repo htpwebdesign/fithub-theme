@@ -13,6 +13,8 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
+				<script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+				<div class="elfsight-app-2b58a953-c16f-4e0b-aa7a-0e49bdabfd33" data-elfsight-app-lazy></div>
 			<?php 
 				// google map in footer
 				echo do_shortcode( '[wpgmza id="1"]' ); 
@@ -28,6 +30,7 @@
 				/* translators: 1: Theme name, 2: Theme author. */
 				// printf( esc_html__( 'Theme: %1$s by %2$s.', 'fithub-theme' ), 'fithub-theme', '<a href="https://fithub.bcitwebdeveloper.ca/">FWD 34</a>' );
 				?>
+				
 				<h2>Visit Us</h2>
 				<p>Google maps coming soon</p>
 				<h2>Contact Us</h2>
