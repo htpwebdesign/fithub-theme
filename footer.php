@@ -13,10 +13,9 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-				<script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-				<div class="elfsight-app-2b58a953-c16f-4e0b-aa7a-0e49bdabfd33" data-elfsight-app-lazy></div>
 			<?php 
 				// google map in footer
+				echo do_shortcode( '[instagram-feed feed=1]' ); 
 				echo do_shortcode( '[wpgmza id="1"]' ); 
 			?>
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'fithub-theme' ) ); ?>">
