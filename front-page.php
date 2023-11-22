@@ -32,7 +32,7 @@ get_header();
 		?>
 
 		<!-- Team Secton -->
-		<section>
+		<section class="fithub-team" >
 		<h2>FitHub Team</h2>
 		<?php
 			$args = array(
@@ -45,11 +45,12 @@ get_header();
 					$team_query->the_post();
 			?>
 				<article>
-					<?php the_post_thumbnail('medium'); ?>
-					<a href="<?php the_permalink(); ?>">
-						<h3><?php the_title(); ?></h3>
-					</a>
-				</article>
+                <?php the_post_thumbnail('medium'); ?>
+				<br>
+                <button onclick="window.location='<?php the_permalink(); ?>'">
+                    <h3><?php the_title(); ?></h3>
+                </button>
+            </article>
 			<?php
 				}
 				wp_reset_postdata();
@@ -58,7 +59,7 @@ get_header();
 		</section>
 
 		<!-- Service Secton -->
-		<section>
+		<section class="services-menu">
 			<h2>Services We Offer</h2>
 			<?php
 				$args = array(
@@ -91,7 +92,7 @@ get_header();
 		</section>
 
 		<!-- Product Secton -->
-		<section>
+		<section class="products-menu">
 		<h2>Our Array of Products</h2>
 		<?php
 			$args = array(
@@ -128,7 +129,7 @@ get_header();
 
 		<!-- Post Secton -->
 		<h2>React to Our Blog</h2>
-		<section>
+		<section class="blog-menu">
 		<?php
 			$args = array(
 				'post_type'	=> 'post',
@@ -142,10 +143,12 @@ get_header();
 					$blog_query->the_post();
 			?>
 				<article>
-					<?php the_post_thumbnail('medium'); ?>
 					<a href="<?php the_permalink(); ?>">
 						<h3><?php the_title(); ?></h3>
+						<?php the_post_thumbnail('medium'); ?>
 					</a>
+					
+					
 				</article>
 			<?php
 				}

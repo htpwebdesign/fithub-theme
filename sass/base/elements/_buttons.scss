@@ -19,3 +19,30 @@ input[type="submit"] {
 		border-color: $color__border-button-focus;
 	}
 }
+
+.fithub-team {
+	button {
+	  border: none;
+	  margin-bottom: 5px;
+	  padding: 15px 30px;
+	  cursor: pointer;
+	  border-radius: 50px; // Updated border-radius
+	  transition: background-color 0.3s ease;
+  
+	  &:hover {
+		background-color: darken(#1E1E1E, 10%); // Darken the color on hover
+	  }
+  
+	  &:active {
+		transform: translateY(2px); // Add a slight vertical shift when pressed
+	  }
+  
+	  // Additional styling based on your design preferences
+	  background-color: #1E1E1E;
+	  color: white;
+	  font-size: 16px;
+	  font-weight: bold;
+	}
+  }
+  
+  
