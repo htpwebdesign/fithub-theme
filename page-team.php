@@ -31,46 +31,59 @@ get_header();
 		?>
 
 		<?php
-		$args = array(
-			'post_type'      => 'fithub-team',
-			'posts_per_page' => -1,
-		);
+			$args = array(
+				'post_type'      => 'fithub-team',
+				'posts_per_page' => -1,
+			);
 
-		$query = new WP_Query($args);
+			$query = new WP_Query($args);
 
-		if ($query->have_posts()) {
-			echo '<section>
-			<h2>Our Team</h2>';
-			while ($query->have_posts()) {
-				$query->the_post();
-				if (function_exists('get_field')) {
-					echo "<article>";
-					the_post_thumbnail('medium');
-					echo '<h3>' . get_the_title() . '</h3>';
-					
-					// Adjust the following conditions based on your requirements
-					if (get_field('team_description')) {
-						echo '<p>' . get_field('team_description') . '</p>';
-					}
-					if (get_field('first_service')) {
-						$link = get_field("first_service");
-						if ($link): ?>
-                            <a class="button" href="<?php echo esc_url( $link['url'] ); ?>"><?php echo esc_html( $link['title'] ); ?></a>
-						<?php endif;
-					}
-					if (get_field('second_service')) {
-						$link = get_field("second_service");
-						if ($link): ?>
-                            <a class="button" href="<?php echo esc_url( $link['url'] ); ?>"><?php echo esc_html( $link['title'] ); ?></a>
-						<?php endif;
-					}
-					echo "</article>";
-				}
-			}
-			wp_reset_postdata();
-			echo '</section>';
-		}
+			if ($query->have_posts()) :
 		?>
+
+		<section>
+			<h2>Our Team</h2>
+			<?php
+			while ($query->have_posts()) :
+				$query->the_post();
+				if (function_exists('get_field')) :
+			?>
+			<article>
+				<?php the_post_thumbnail('medium'); ?>
+				
+				<h3><?php echo get_the_title(); ?></h3>
+
+				<?php if (get_field('team_description')) :?>
+
+				<p><?php echo get_field('team_description'); ?> </p>
+
+				<?php 
+				endif;
+
+				if (get_field('first_service')) :
+					$link = get_field("first_service");
+					if ($link): 
+				?>
+
+				<a class="button" href="<?php echo esc_url( $link['url'] ); ?>"><?php echo esc_html( $link['title'] ); ?></a>
+						
+				<?php 
+					endif;
+				endif;
+						if (get_field('second_service')) :
+							$link = get_field("second_service");
+							if ($link): ?>
+								<a class="button" href="<?php echo esc_url( $link['url'] ); ?>"><?php echo esc_html( $link['title'] ); ?></a>
+							<?php endif;
+						endif; ?>
+			</article>
+						<?php
+					endif;
+				endwhile;
+				wp_reset_postdata();
+			endif 
+			?>
+		</section>
 
 	</main><!-- #main -->
 

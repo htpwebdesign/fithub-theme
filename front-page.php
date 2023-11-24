@@ -73,10 +73,10 @@ get_header();
 						)
 					)
 				);
-			$product_query = new WP_Query($args);
-			if ($product_query->have_posts()) {
-				while ($product_query->have_posts()) {
-					$product_query->the_post();
+			$service_query = new WP_Query($args);
+			if ($service_query->have_posts()) {
+				while ($service_query->have_posts()) {
+					$service_query->the_post();
 			?>
 			<article>
 				<?php the_post_thumbnail('medium'); ?>

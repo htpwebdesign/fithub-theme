@@ -58,147 +58,81 @@ if ( woocommerce_product_loop() ) {
 
 	woocommerce_product_loop_start();
 
-	// if ( wc_get_loop_prop( 'total' ) ) {
-	// 	while ( have_posts() ) {
-	// 		the_post();
-
-	// 		/**
-	// 		 * Hook: woocommerce_shop_loop.
-	// 		 */
-	// 		do_action( 'woocommerce_shop_loop' );
-
-	// 		wc_get_template_part( 'content', 'product' );
-	// 	}
-	// }
+	
 
 	?>
 
-	<!-- apparel -->
 	<?php
-	$args = array(
-		'post_type'	=> 'product',
-		'posts_per_page' => 3,
-		'order' => 'ASC',
-		'orderby' => 'title',
-		'tax_query'      => array(
+
+	if (is_shop()) :
+		$terms = get_terms(
 			array(
 				'taxonomy' => 'product_cat',
-				'field' => 'slug',
-				'terms' => 'apparel',
-			)
-		)
-	);
-	$product_query = new WP_Query($args);
-	if ($product_query->have_posts()) {
-		while ($product_query->have_posts()) {
-			$product_query->the_post();
-	?>
-		<article>
-			<?php the_post_thumbnail('medium'); ?>
-			<a href="<?php the_permalink(); ?>">
-				<h3><?php the_title(); ?></h3>
-			</a>
-		</article>
-	<?php
-		}
-		wp_reset_postdata();
-	}
-	?>
-
-	<!-- gym-gear -->
-	<?php
-	$args = array(
-		'post_type'	=> 'product',
-		'posts_per_page' => 3,
-		'order' => 'ASC',
-		'orderby' => 'title',
-		'tax_query'      => array(
-			array(
-				'taxonomy' => 'product_cat',
-				'field' => 'slug',
-				'terms' => 'gym-gear',
-			)
-		)
-	);
-	$product_query = new WP_Query($args);
-	if ($product_query->have_posts()) {
-		while ($product_query->have_posts()) {
-			$product_query->the_post();
-	?>
-		<article>
-			<?php the_post_thumbnail('medium'); ?>
-			<a href="<?php the_permalink(); ?>">
-				<h3><?php the_title(); ?></h3>
-			</a>
-		</article>
-	<?php
-		}
-		wp_reset_postdata();
-	}
-	?>
-
-	<!-- gym-membership -->
-	<?php
-		$args = array(
-			'post_type'	=> 'product',
-			'posts_per_page' => 3,
-			'order' => 'ASC',
-			'orderby' => 'title',
-			'tax_query'      => array(
-				array(
-					'taxonomy' => 'product_cat',
-					'field' => 'slug',
-					'terms' => 'gym-membership',
-				)
 			)
 		);
-		$product_query = new WP_Query($args);
-		if ($product_query->have_posts()) {
-			while ($product_query->have_posts()) {
-				$product_query->the_post();
-		?>
-			<article>
-				<?php the_post_thumbnail('medium'); ?>
-				<a href="<?php the_permalink(); ?>">
-					<h3><?php the_title(); ?></h3>
-				</a>
-			</article>
-		<?php
-			}
-			wp_reset_postdata();
-		}
-	?>
 
-	<!-- supplements -->
+		if ($terms && !is_wp_error($terms)) :
+			foreach ($terms as $term) :
+
+				$args = array(
+					'post_type'	=> 'product',
+					'posts_per_page' => 3,
+					'order' => 'ASC',
+					'orderby' => 'title',
+					'tax_query'      => array(
+						array(
+							'taxonomy' => 'product_cat',
+							'field' => 'slug',
+							'terms' => $term->slug,
+						)
+					)
+				);
+
+				$product_query = new WP_Query($args);
+
+				if ($product_query->have_posts()) :
+	?>
+				<section>
+					<article>
+						<h2><?php echo esc_html__($term->name); ?></h2>
+						<?php
+							while ($product_query->have_posts()) :
+								$product_query->the_post();
+						?>
+							<?php the_post_thumbnail('medium'); ?>
+							<a href="<?php the_permalink(); ?>">
+								<h3><?php the_title(); ?></h3>
+							</a>
+						<?php
+							endwhile;
+							wp_reset_postdata();
+						?>
+					</article>
+				</section>
 	<?php
-		$args = array(
-			'post_type'	=> 'product',
-			'posts_per_page' => 3,
-			'order' => 'ASC',
-			'orderby' => 'title',
-			'tax_query'      => array(
-				array(
-					'taxonomy' => 'product_cat',
-					'field' => 'slug',
-					'terms' => 'supplements',
-				)
-			)
-		);
-		$product_query = new WP_Query($args);
-		if ($product_query->have_posts()) {
-			while ($product_query->have_posts()) {
-				$product_query->the_post();
-		?>
-			<article>
-				<?php the_post_thumbnail('medium'); ?>
-				<a href="<?php the_permalink(); ?>">
-					<h3><?php the_title(); ?></h3>
-				</a>
-			</article>
-		<?php
-			}
-			wp_reset_postdata();
-		}
+				endif;
+
+			endforeach;
+
+		endif;
+
+	else :
+
+		if ( wc_get_loop_prop( 'total' ) ) :
+			while ( have_posts() ) :
+				the_post();
+
+				/**
+				 * Hook: woocommerce_shop_loop.
+				 */
+				do_action( 'woocommerce_shop_loop' );
+
+				wc_get_template_part( 'content', 'product' );
+			endwhile;
+
+		endif;
+		
+	endif;
 	?>
 
 	<?php
