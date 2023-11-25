@@ -5,15 +5,15 @@
                 <a href="<?php the_permalink(); ?>">
                     <?php the_post_thumbnail( 'large' ); ?>
                 </a>
-            </div><!-- .post-thumbnail -->
+            </div>
         <?php endif; ?>
 
         <?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
-    </header><!-- .entry-header -->
+    </header>
 
     <div class="entry-content">
         <?php the_excerpt(); ?>
-    </div><!-- .entry-content -->
+    </div>
 
     <footer class="entry-footer">
         <?php
@@ -26,5 +26,5 @@
             '</span>'
         );
         ?>
-    </footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+    </footer>
+</article><?php the_ID(); ?> 
