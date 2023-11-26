@@ -1,7 +1,19 @@
 .site-header {
-	.main-navigation {
-		display: block;
+	.navigation-container {
 		width: 100%;
+		display: flex;
+		justify-content: space-evenly;
+		position: fixed;
+		bottom: 0;
+
+		.home-icon,
+		.team-icon,
+		.cart-icon {
+			display: block;
+		}
+	}
+
+	.main-navigation {
 
 		ul {
 			display: none;
@@ -69,7 +81,9 @@
 		.current-menu-ancestor > a {
 		}
 	}
+	
 }
+
 
 /* Small menu. */
 .menu-toggle,
@@ -77,14 +91,41 @@
 	display: block;
 }
 
+
+
 @media screen and (min-width: 37.5em) {
-
-	.menu-toggle {
-		display: none;
-	}
-
-	.main-navigation ul {
+	.site-header {
 		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 15px;
+
+		.navigation-container {
+			width: auto;
+			position: relative;
+
+			.home-icon,
+			.team-icon,
+			.cart-icon {
+				display: none;
+			}
+
+			.main-navigation {
+
+				li {
+					margin: 0 10px;
+				}
+
+				.menu-toggle {
+					display: none;
+				}
+
+				ul {
+					display: flex;
+				}
+			}
+			
+		}
 	}
 }
 
