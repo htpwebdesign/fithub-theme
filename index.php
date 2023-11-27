@@ -17,6 +17,7 @@ get_header();
 
 	<main id="primary" class="site-main">
 		<h1>Blog</h1>
+		<div class="blog-page-posts">
 		<?php
 		if ( have_posts() ) :
 
@@ -54,6 +55,8 @@ get_header();
 		<?php
 			echo do_shortcode( '[instagram-feed feed=1]' ); 
 		?>
+
+		</div>
 	</main><!-- #main -->
 
 <?php
