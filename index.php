@@ -51,7 +51,9 @@ get_header();
 
 		endif;
 		?>
-
+		<?php
+			echo do_shortcode( '[instagram-feed feed=1]' ); 
+		?>
 	</main><!-- #main -->
 
 <?php
