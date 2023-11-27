@@ -13,7 +13,7 @@
 
 	<footer id="colophon" class="site-footer">
 
-		<h2>Contact Us</h2>
+		<h2>Visit Us</h2>
 		
 		<div class="map-location">
 			<?php 
