@@ -16,7 +16,7 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-
+		<h1>Blog</h1>
 		<?php
 		if ( have_posts() ) :
 
@@ -29,6 +29,7 @@ get_header();
 			endif;
 
 			/* Start the Loop */
+			
 			while ( have_posts() ) :
 				the_post();
 

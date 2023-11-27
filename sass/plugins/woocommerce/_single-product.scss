@@ -1,11 +1,12 @@
 .single-product {
-
+ margin: 0 auto;
 	div.product {
 		position: relative;
 
 		.woocommerce-product-gallery {
 			position: relative;
-			float: left;
+			margin: 1rem auto;
+			max-width: 19rem;
 
 			.woocommerce-product-gallery__trigger {
 				position: absolute;

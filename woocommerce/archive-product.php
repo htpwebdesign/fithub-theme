@@ -92,15 +92,15 @@ if ( woocommerce_product_loop() ) {
 
 				if ($product_query->have_posts()) :
 	?>
-				<section>
+				<section class="shop">
+					<h2><?php echo esc_html__($term->name); ?></h2>
 					<article>
-						<h2><?php echo esc_html__($term->name); ?></h2>
 						<?php
 							while ($product_query->have_posts()) :
 								$product_query->the_post();
 						?>
-							<?php the_post_thumbnail('medium'); ?>
 							<a href="<?php the_permalink(); ?>">
+							<?php the_post_thumbnail('medium'); ?>
 								<h3><?php the_title(); ?></h3>
 							</a>
 						<?php

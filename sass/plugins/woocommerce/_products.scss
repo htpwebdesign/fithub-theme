@@ -7,9 +7,9 @@ ul.products {
 		position: relative;
 		margin-bottom: 2em;
 
-		img {
-			display: block;
-		}
+		// img {
+		// 	display: block;
+		// }
 
 		.button {
 			display: block;
@@ -56,5 +56,29 @@ ul.products {
 			}
 
 		}
+	}
+
+
+	.shop article a,
+	.fithub-team article,
+	.fithub-teampage article{
+
+		@include column-width(3);
+		width: 20%;
+		display: inline-block;
+		margin: 0 4rem;
+
+		&.first {
+			clear: both;
+		}
+
+		&.last {
+			margin-right: 0;
+		}
+	}
+
+	.fithub-teampage {
+		display: flex;
+		justify-content: center;
 	}
 }

@@ -26,6 +26,7 @@
 .star-rating {
 	overflow: hidden;
 	position: relative;
+	margin: 0 auto;
 	height: 1.618em;
 	line-height: 1.618;
 	width: 5.3em;
@@ -35,7 +36,6 @@
 	&::before {
 		content: "\53\53\53\53\53";
 		opacity: 0.25;
-		float: left;
 		top: 0;
 		left: 0;
 		position: absolute;
@@ -43,9 +43,9 @@
 
 	span {
 		overflow: hidden;
-		float: left;
 		top: 0;
 		left: 0;
+		right: 0;
 		position: absolute;
 		padding-top: 1.5em;
 	}
@@ -55,6 +55,7 @@
 		top: 0;
 		position: absolute;
 		left: 0;
+		right: 0;
 		color: $color__link;
 	}
 }

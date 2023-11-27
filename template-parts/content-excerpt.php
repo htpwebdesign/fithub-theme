@@ -27,4 +27,4 @@
         );
         ?>
     </footer>
-</article><?php the_ID(); ?> 
+</article>

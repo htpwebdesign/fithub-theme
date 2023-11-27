@@ -21,6 +21,10 @@ a {
 	}
 }
 
+a {
+	text-decoration: none;
+}
+
 .services-menu, .products-menu {
 	list-style-type: none;
 	padding: 0;
@@ -31,23 +35,16 @@ a {
 	  margin: 10px;
 	  transition: transform 0.3s ease-in-out; 
   
-	  &:hover {
-		transform: scale(1.1);
-	  }
-  
 	  a {
 		text-decoration: none;
 		display: block;
-		padding: 15px;
-		background-color: #8A0000; 
+		padding: 10px 15px;
+		background-color: #1e1e1e; 
 		color: #fff;
-		font-family: 'Arial', sans-serif;
-		text-transform: uppercase;
-		letter-spacing: 2px;
-		border-radius: 5px;
+		border-radius: 10px;
 		h3 {
 		  margin: 0;
-		  font-size: 18px;
+		  font-size: 16px;
 		  font-weight: bold;
 		  color: #FFFFFF; 
 		  transition: color 0.3s ease-in-out;

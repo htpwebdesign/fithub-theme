@@ -33,7 +33,7 @@ get_header();
 
 		<!-- Team Secton -->
 		<section class="fithub-team" >
-		<h2>FitHub Team</h2>
+		<h1>Team</h1>
 		<?php
 			$args = array(
 				'post_type'	=> 'fithub-team',
@@ -45,10 +45,12 @@ get_header();
 					$team_query->the_post();
 			?>
 				<article>
+				<h2><?php the_title(); ?></h2>
                 <?php the_post_thumbnail('medium'); ?>
+                <?php the_excerpt(); ?>
 				<br>
                 <button onclick="window.location='<?php the_permalink(); ?>'">
-                    <h3><?php the_title(); ?></h3>
+					<h3>Check our Team</h3>
                 </button>
             </article>
 			<?php
@@ -60,7 +62,7 @@ get_header();
 
 		<!-- Service Secton -->
 		<section class="services-menu">
-			<h2>Services We Offer</h2>
+			<h1>Services We Offer</h1>
 			<?php
 				$args = array(
 					'post_type'	=> 'product',
@@ -93,7 +95,7 @@ get_header();
 
 		<!-- Product Secton -->
 		<section class="products-menu">
-		<h2>Our Array of Products</h2>
+		<h1>Our Array of Products</h1>
 		<?php
 			$args = array(
 				'post_type'	=> 'product',
@@ -128,7 +130,7 @@ get_header();
 		</section>
 
 		<!-- Post Secton -->
-		<h2>React to Our Blog</h2>
+		<h1>React to Our Blog</h1>
 		<section class="blog-menu">
 		<?php
 			$args = array(
@@ -145,7 +147,7 @@ get_header();
 				<article>
 					<a href="<?php the_permalink(); ?>">
 						<h3><?php the_title(); ?></h3>
-						<?php the_post_thumbnail('medium'); ?>
+						<?php the_post_thumbnail('large'); ?>
 					</a>
 					
 					
