@@ -40,9 +40,8 @@ get_header();
 
 			if ($query->have_posts()) :
 		?>
-
-		<section>
-			<h2>Our Team</h2>
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<section class="fithub-teampage">
 			<?php
 			while ($query->have_posts()) :
 				$query->the_post();
@@ -50,13 +49,13 @@ get_header();
 			?>
 			<article>
 				<?php the_post_thumbnail('medium'); ?>
-				
+
 				<h3><?php echo get_the_title(); ?></h3>
 
 				<?php if (get_field('team_description')) :?>
 
 				<p><?php echo get_field('team_description'); ?> </p>
-
+				<h3>What they Offer</h3>
 				<?php 
 				endif;
 
@@ -64,16 +63,18 @@ get_header();
 					$link = get_field("first_service");
 					if ($link): 
 				?>
-
-				<a class="button" href="<?php echo esc_url( $link['url'] ); ?>"><?php echo esc_html( $link['title'] ); ?></a>
-						
+						<a class="button" href="<?php echo esc_url( $link['url'] ); ?>">
+							<h3><?php echo esc_html( $link['title'] ); ?></h3>
+						</a>				
 				<?php 
 					endif;
 				endif;
 						if (get_field('second_service')) :
 							$link = get_field("second_service");
 							if ($link): ?>
-								<a class="button" href="<?php echo esc_url( $link['url'] ); ?>"><?php echo esc_html( $link['title'] ); ?></a>
+								<a class="button" href="<?php echo esc_url( $link['url'] ); ?>">
+									<h3><?php echo esc_html( $link['title'] ); ?></h3>
+								</a>
 							<?php endif;
 						endif; ?>
 			</article>
