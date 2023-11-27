@@ -21,3 +21,28 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+.blog-page-posts p{
+	padding-left: 30%;
+	padding-right: 30%;
+	margin: 0 auto;
+}
+
+.blog-single-post {
+	img {
+		height: auto;
+    	max-width: 50%;
+	}
+
+	p {
+		padding-left: 15%;
+		padding-right: 15%;
+	}
+
+	.nav-title {
+		color: green;
+		font-style: italic;
+		font-size: larger;
+		font-family: fantasy;
+	}
+}

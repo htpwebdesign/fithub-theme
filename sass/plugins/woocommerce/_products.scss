@@ -63,7 +63,8 @@ ul.products {
 	.fithub-team article,
 	.fithub-teampage article,
 	.services-menu article,
-	.products-menu article{
+	.products-menu article,
+	.blog-menu article{
 
 		@include column-width(3);
 		width: 20%;
