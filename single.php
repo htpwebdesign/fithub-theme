@@ -30,6 +30,8 @@ get_header();
 				comments_template();
 			endif;
 
+			echo do_shortcode( '[instagram-feed feed=1]' ); 
+
 		endwhile; // End of the loop.
 		?>
 

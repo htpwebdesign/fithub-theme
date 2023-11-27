@@ -14,9 +14,6 @@
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
 
-		<?php
-		echo do_shortcode( '[instagram-feed feed=1]' ); 
-		?>
 		<h2>Visit Us</h2>
 			<?php 
 				// google map in footer
