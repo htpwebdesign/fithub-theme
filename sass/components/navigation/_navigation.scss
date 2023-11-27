@@ -8,100 +8,135 @@
 		position: fixed;
 		bottom: 0;
 		background-color: black;
+		height: 60px;
+		z-index: 99999;
 
 		.home-icon,
 		.team-icon,
 		.cart-icon {
 			display: block;
-			fill: white;
-		}
-	}
+			width: 58px;
+			height: 60px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 
-	.main-navigation {
-
-		ul {
-			display: none;
-			list-style: none;
-			margin: 0;
-			padding-left: 0;
-			position: absolute;
-			top: -230px;
-			background-color: black;
-
-			li {
-				position: relative;
-				padding: 2px 10px;
-
-				&:hover > a,
-				&.focus > a {
-					color: black;
-				}
-				
-				ul {
-					box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-					position: absolute;
-					top: -5px;
-					left: -999em;
-					z-index: 99999;
-					padding: 5px 0;
-					
-					ul {
-						left: -999em;
-						top: 0;
-					}
-
-					li {
-
-						&:hover > ul,
-						&.focus > ul {
-							display: block;
-							left: auto;
-						}
-					}
-
-					a {
-						width: 200px;
-					}
-				}
-
-				a {
-					display: block;
-					text-decoration: none;
-					color: white;
-				}
+			a {
+				display: flex;
+				align-items: center;
+				fill: white;
 
 				&:hover {
-					background-color: white;
-				}
-
-				&:hover > ul,
-				&.focus > ul {
-					left: -220px;
+					fill: red;
 				}
 			}
 		}
 
+		.main-navigation {
 
-		.current_page_item > a,
-		.current-menu-item > a,
-		.current_page_ancestor > a,
-		.current-menu-ancestor > a {
+			button {
+				background-color: black;
+				border: none;
+				max-width: fit-content;
+
+				svg {
+					fill: white;
+					height: 40px;
+					width: 30px;
+				}
+
+				&:hover > svg {
+					fill: red;
+				}
+			}
+
+			ul {
+				display: none;
+				list-style: none;
+				margin: 0;
+				padding-left: 0;
+				position: absolute;
+				top: -199px;
+				left: -50px;
+				background-color: black;
+				width: 150px;
+
+				.menu-item-113,
+				.menu-item-105 {
+					display: none;
+				}
+
+				li {
+					position: relative;
+					padding: 2px 10px;
+
+					&:hover > a,
+					&.focus > a {
+						color: black;
+					}
+					
+					ul {
+						box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+						position: absolute;
+						top: -5px;
+						left: -999em;
+						z-index: 99999;
+						padding: 5px 0;
+						width: max-content;
+						
+						ul {
+							left: -999em;
+							top: 0;
+						}
+
+						li {
+
+							&:hover > ul,
+							&.focus > ul {
+								display: block;
+								left: auto;
+							}
+						}
+
+						a {
+							width: 200px;
+						}
+					}
+
+					a {
+						display: block;
+						text-decoration: none;
+						color: white;
+					}
+
+					&:hover {
+						background-color: white;
+					}
+
+					&:hover > ul,
+					&.focus > ul {
+						left: -200px;
+					}
+				}
+			}
+
+			.current_page_item > a,
+			.current-menu-item > a,
+			.current_page_ancestor > a,
+			.current-menu-ancestor > a {
+			}
 		}
 	}
-	
 	.menu-header-menu-container {
 		position: relative;
 	}
 }
 
-
 /* Small menu. */
 .menu-toggle,
-.main-navigation.toggled ul {
+.navigation-container .main-navigation.toggled ul {
 	display: block;
 }
-
-
 
 @media screen and (min-width: 37.5em) {
 	.site-header {
@@ -128,6 +163,13 @@
 					position: relative;
 					top: 0;
 					background-color: white;
+					width: auto;
+					left: 0;
+
+					.menu-item-113,
+					.menu-item-105 {
+						display: block;
+					}
 
 					li {
 						margin: 0 10px;
