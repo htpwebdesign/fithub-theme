@@ -61,12 +61,14 @@ ul.products {
 
 	.shop article a,
 	.fithub-team article,
-	.fithub-teampage article{
+	.fithub-teampage article,
+	.services-menu article,
+	.products-menu article{
 
 		@include column-width(3);
 		width: 20%;
 		display: inline-block;
-		margin: 0 4rem;
+		margin: 0 2.5rem;
 
 		&.first {
 			clear: both;
@@ -77,8 +79,16 @@ ul.products {
 		}
 	}
 
+	.fithub-team {
+		margin: 0;
+	}
+
 	.fithub-teampage {
 		display: flex;
 		justify-content: center;
+	}
+
+	.site-main section h2 {
+		margin-top: 4rem;
 	}
 }

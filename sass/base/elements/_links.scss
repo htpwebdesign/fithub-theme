@@ -38,20 +38,10 @@ a {
 	  a {
 		text-decoration: none;
 		display: block;
-		padding: 10px 15px;
-		background-color: #1e1e1e; 
-		color: #fff;
-		border-radius: 10px;
+		
 		h3 {
 		  margin: 0;
-		  font-size: 16px;
 		  font-weight: bold;
-		  color: #FFFFFF; 
-		  transition: color 0.3s ease-in-out;
-  
-		  &:hover {
-			color: #e74c3c; 
-		  }
 		}
 	  }
 	}

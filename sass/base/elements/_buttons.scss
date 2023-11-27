@@ -27,7 +27,6 @@ input[type="submit"] {
 	  padding: 0 15px;
 	  cursor: pointer;
 	  border-radius: 10px; // Updated border-radius
-	  transition: background-color 0.3s ease;
   
 	  &:hover {
 		background-color: darken(#1E1E1E, 10%); // Darken the color on hover
@@ -40,7 +39,7 @@ input[type="submit"] {
 	  // Additional styling based on your design preferences
 	  background-color: #1E1E1E;
 	  color: white;
-	  font-size: 14px;
+	  margin-top: -20px;
 	}
 }
   

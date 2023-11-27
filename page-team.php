@@ -50,12 +50,12 @@ get_header();
 			<article>
 				<?php the_post_thumbnail('medium'); ?>
 
-				<h2><?php echo get_the_title(); ?></h2>
+				<h3><?php echo get_the_title(); ?></h3>
 
 				<?php if (get_field('team_description')) :?>
 
 				<p><?php echo get_field('team_description'); ?> </p>
-				<h2>What they Offer</h2>
+				<h3>What they Offer</h3>
 				<?php 
 				endif;
 
