@@ -49,7 +49,7 @@ get_header();
                 <?php the_post_thumbnail('medium'); ?>
                 <?php the_excerpt(); ?>
 				<br>
-                <button onclick="window.location='<?php the_permalink(); ?>'">
+                <button onclick="window.location='<?php echo esc_url( get_page_link( 111 ) ); ?>'">
 					<h3>Check our Team</h3>
                 </button>
             </article>
