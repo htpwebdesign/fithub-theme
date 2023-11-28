@@ -1,0 +1,121 @@
+.site {
+    .site-main {
+        .woocommerce-message {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            padding: 10px;
+
+            a {
+                border: 2px solid black;
+                background-color: black;
+                color: white;
+                max-width: fit-content;
+                padding: 5px 10px;
+
+                &:hover {
+                    background-color: white;
+                    color: black;
+                }
+            }
+        }
+
+        .product-type-booking {
+            .product-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .entry-summary {
+                    width: 100%;
+
+                    .cart {
+                        .wc-bookings-booking-form {
+                            border: none;
+
+                            .wc-bookings-date-picker {
+                                border: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .woocommerce-tabs {
+                margin-bottom: 4rem;
+
+                ul {
+                    display: flex;
+                    flex-direction: row;
+                    padding: 0 10px;
+
+                    li {
+                        margin: 0 10px;
+
+                        a {
+                            padding: 5px 10px;
+                        }
+
+                        &:hover {
+                            background-color: black;
+                        }
+
+                        &:hover > a {
+                            color: white;
+                        }
+                    }
+                }
+
+                .woocommerce-Tabs-panel--description {
+                    padding: 0 25px;
+
+                    p {
+                        text-align: left;
+                    }
+                }
+
+                .woocommerce-Tabs-panel--reviews {
+                    .comment-respond {
+                        padding: 0 25px;
+                    }
+
+                    form {
+    
+                        textarea {
+                            text-align: left;
+                        }
+
+                        input {
+                            text-align: left;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 37.5em) {
+    .site {
+        .site-main {
+
+            .product-type-booking {
+
+                .product-container {
+                    
+                }
+
+                .woocommerce-tabs {
+                    .woocommerce-Tabs-panel {
+                        .comment-respond {
+                            padding: 0 60px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
