@@ -147,10 +147,8 @@ get_header();
 				<article>
 					<a href="<?php the_permalink(); ?>">
 						<?php the_post_thumbnail('large'); ?>
-						<h3><?php the_title(); ?></h3>
+						<h3><?php echo substr(get_the_title(), 0, 30); ?>...</h3>
 					</a>
-					
-					
 				</article>
 			<?php
 				}
