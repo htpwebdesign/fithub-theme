@@ -103,7 +103,7 @@ if ( woocommerce_product_loop() ) {
 								$product_query->the_post();
 						?>
 							<a href="<?php the_permalink(); ?>">
-							<?php the_post_thumbnail('medium'); ?>
+								<?php the_post_thumbnail('medium_large'); ?>
 								<h3><?php the_title(); ?></h3>
 							</a>
 						<?php
