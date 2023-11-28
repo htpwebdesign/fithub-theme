@@ -32,12 +32,23 @@
 	}
 }
 
+.woocommerce-page {
+	.site {
+		.site-footer {
+			padding-bottom: 70px;
+
+			@media screen and (min-width: 37.5em) {
+				padding-bottom: 10px;
+			}
+		}
+	}
+}
+
 @media screen and (min-width: 37.5em) {
 
 	.site {
-
 		.site-footer {
-			padding-bottom: 0;
+			padding-bottom: 0px;
 		}
 	}
 }
