@@ -10,7 +10,7 @@
 		display: flex;
 		width: 100%;
 		flex-direction: column;
-		padding-bottom: 50px;
+		padding-bottom: 70px;
 		align-items: center;
 
 		.map-location {
@@ -21,24 +21,9 @@
 			margin: 15px 0px;
 
 			a {
-
 				&:hover > svg {
-					
 					fill: red;
-					
 				}
-			}
-		}
-	}
-}
-
-.woocommerce-page {
-	.site {
-		.site-footer {
-			padding-bottom: 70px;
-
-			@media screen and (min-width: 37.5em) {
-				padding-bottom: 10px;
 			}
 		}
 	}
@@ -48,7 +33,7 @@
 
 	.site {
 		.site-footer {
-			padding-bottom: 0px;
+			padding-bottom: 10px;
 		}
 	}
 }
