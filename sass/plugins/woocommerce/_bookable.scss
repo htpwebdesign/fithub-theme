@@ -77,8 +77,15 @@
                 }
 
                 .woocommerce-Tabs-panel--reviews {
-                    .comment-respond {
-                        padding: 0 25px;
+                    .woocommerce-Reviews {
+                        ol {
+                            padding: 0;
+                            margin: 0;
+                        }
+
+                        .comment-respond {
+                            padding: 0 25px;
+                        }
                     }
 
                     form {
