@@ -229,3 +229,24 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+// Keep Length of Excerpt to 25
+function fithub_theme_excerpt_length($length)
+{
+	if ( !is_front_page() && is_home() ) {
+		return 55;
+	} else {
+		return 20;
+	}
+}
+add_filter('excerpt_length', 'fithub_theme_excerpt_length', 999);
+
+// Modify the end of the excerpt
+function fithub_theme_excerpt_more($more)
+{
+	if ( !is_front_page() && is_home() ) {
+		$more = '... <a href="' . esc_url(get_permalink()) . '">Read More</a>';
+	}
+	return $more;
+}
+add_filter('excerpt_more', 'fithub_theme_excerpt_more');
