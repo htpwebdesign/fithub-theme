@@ -13,6 +13,11 @@ ul.products {
 	}
 }
 
+.fithub-teampage article {
+	margin: 0 auto 3rem;
+	width: 17rem;
+}
+
 @media screen and (min-width: 32em) {
 
 	ul.products {
@@ -68,7 +73,7 @@ ul.products {
 	.blog-menu article{
 
 		@include column-width(3);
-		width: 11rem;
+		width: 17rem;
 		display: inline-block;
 		margin: 0 0.75rem;
 
@@ -80,6 +85,17 @@ ul.products {
 		&.last {
 			margin-right: 0;
 		}
+	}
+
+	.fithub-teampage article {
+		width: 17rem;
+	}
+
+	.services-menu article,
+	.products-menu article,
+	.blog-menu article,
+	.fithub-teampage article {
+		margin-bottom: 2rem;
 	}
 
 	.shop article a {
