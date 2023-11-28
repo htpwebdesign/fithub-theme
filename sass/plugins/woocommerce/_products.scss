@@ -13,20 +13,21 @@ ul.products {
 	}
 }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 32em) {
 
 	ul.products {
 
 		li.product {
 
 			@include column-width(3);
-			float: left;
-			margin-right: $columns__margin;
-
+			width: 13rem;
+			display: inline-block;
+			margin: 0 2.5rem;
+	
 			&.first {
 				clear: both;
 			}
-
+	
 			&.last {
 				margin-right: 0;
 			}
@@ -45,15 +46,19 @@ ul.products {
 	@for $i from 2 through 6 {
 
 		ul.products.columns-#{$i} {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			max-width: 51rem;
+			margin: 3rem auto 0;
 
 			li.product {
-
-				@include column-width( $i );
+				width: 13rem;
+				margin: 0 auto 2rem;
 			}
 
 		}
 	}
-
 
 	.shop article a,
 	.fithub-team article,
@@ -63,9 +68,10 @@ ul.products {
 	.blog-menu article{
 
 		@include column-width(3);
-		width: 20%;
+		width: 11rem;
 		display: inline-block;
-		margin: 0 2.5rem;
+		margin: 0 0.75rem;
+
 
 		&.first {
 			clear: both;
@@ -76,13 +82,19 @@ ul.products {
 		}
 	}
 
+	.shop article a {
+		width: 30%;
+		margin: 0 0.75rem;
+	}
+
 	.fithub-team {
 		margin: 0;
 	}
 
 	.fithub-teampage {
 		display: flex;
-		justify-content: center;
+		justify-content: space-evenly;
+		flex-wrap: wrap;
 	}
 
 	.site-main section h2 {
