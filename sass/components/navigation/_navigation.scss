@@ -10,6 +10,7 @@
 		background-color: black;
 		height: 60px;
 		z-index: 9999;
+		margin: 0;
 
 		.home-icon,
 		.team-icon,
@@ -143,11 +144,10 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		padding: 0 15px;
 		flex-direction: column;
 
 		.navigation-container {
-			width: auto;
+			height: 50px;
 			position: relative;
 			background-color: white;
 			font-size: 20px;
@@ -200,7 +200,7 @@
 						}
 
 						&:hover > ul {
-							top: 34px;
+							top: 40px;
 							left: -77px;
 						}
 
@@ -246,6 +246,14 @@
 			}
 		}
 	}
+}
+
+.site-main {
+	margin-top: -20px;
+}
+
+.site-title {
+	margin-top: 12px;
 }
 
 .comment-navigation,
