@@ -10,7 +10,7 @@
 		display: flex;
 		width: 100%;
 		flex-direction: column;
-		padding-bottom: 50px;
+		padding-bottom: 70px;
 		align-items: center;
 
 		.map-location {
@@ -21,11 +21,8 @@
 			margin: 15px 0px;
 
 			a {
-
 				&:hover > svg {
-					
 					fill: red;
-					
 				}
 			}
 		}
@@ -35,9 +32,8 @@
 @media screen and (min-width: 37.5em) {
 
 	.site {
-
 		.site-footer {
-			padding-bottom: 0;
+			padding-bottom: 10px;
 		}
 	}
 }
