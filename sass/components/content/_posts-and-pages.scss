@@ -47,4 +47,25 @@
 		font-size: larger;
 		font-family: fantasy;
 	}
+
+	.entry-content {
+		width: 90%;
+		margin: 0 auto;
+
+		@media screen and (min-width: 37.5em) {
+			width: 75%;
+		}
+
+		p{
+			text-align: left;
+		}
+	}
+
+	.comment-respond {
+		textarea,
+		input {
+			text-align: left;
+		}
+
+	}
 }
