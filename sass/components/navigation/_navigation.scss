@@ -182,7 +182,7 @@
 							display: block;
 							text-decoration: none;
 							color: black;
-							font-weight: 600;
+							font-weight: 500;
 						}
 
 						& > a::before {
@@ -202,7 +202,7 @@
 
 						&:hover > ul {
 							top: 40px;
-							left: -77px;
+							left: 0;
 						}
 
 						&:hover > a {
