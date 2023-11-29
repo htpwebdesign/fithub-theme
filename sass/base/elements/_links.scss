@@ -1,28 +1,18 @@
-a {
-	color: $color__link;
+.site-main {
+	a {
+		color: #8A0000;
+		text-decoration: none;
 
-	&:visited {
-		color: $color__link-visited;
+		&:hover {
+			transform: scale(1.03);
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: #c80000;
+		}
 	}
-
-	&:hover,
-	&:focus,
-	&:active {
-		color: $color__link-hover;
-	}
-
-	&:focus {
-		outline: thin dotted;
-	}
-
-	&:hover,
-	&:active {
-		outline: 0;
-	}
-}
-
-a {
-	text-decoration: none;
 }
 
 .services-menu, .products-menu {
@@ -47,29 +37,45 @@ a {
 	}
   }
   
-  .blog-menu {
+.blog-menu {
+
+	margin-bottom: 20px;
+
 	article {
-	  margin-bottom: 20px;
-  
-	  a {
-		text-decoration: none;
-		color: #333;
-  
+
 		&:hover {
-		  color: #ff6600;
+			transform: scale(1.03);
 		}
-	  }
-  
-	  h3 {
-		font-size: 1.5rem;
-		color: #8A0000;
-		
-		margin-bottom: 10px;
-  
 		&:hover {
-		color: #0077cc; // Change the text color on hover
+			h3{
+			transform: scale(1.03);
+			color: #c80000; // Change the text color on hover
+			}
 		}
-	  }
+		a {
+			text-decoration: none;
+			color: #333;
+			
+		}
+  
+		h3 {
+			font-size: 1.3rem;
+			color: #8A0000;
+			
+			margin-bottom: 10px;
+		}
 	}
+}
+
+  .fithub-teampage .team-page {
+
+		a {
+			display: block;
+			text-decoration: none;
+
+			&:hover {
+				transform: scale(1.03);
+			}
+		}
   }
    

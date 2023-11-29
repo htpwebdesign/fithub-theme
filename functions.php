@@ -250,3 +250,5 @@ function fithub_theme_excerpt_more($more)
 	return $more;
 }
 add_filter('excerpt_more', 'fithub_theme_excerpt_more');
+
+remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
