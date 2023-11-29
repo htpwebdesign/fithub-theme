@@ -46,4 +46,38 @@ input[type="submit"] {
 	}
 }
   
-  
+.post-27 {
+	.shop_table {
+		tbody {
+			tr {
+				.actions {
+					.coupon {
+						button {
+							padding: 0.4em 1em;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.cart-collaterals {
+		.cart_totals  {
+			.wc-proceed-to-checkout {
+				height: 35px;
+
+				a {
+					border: 2px solid black;
+					padding: 5px 10px;
+					background-color: black;
+					color: white;
+
+					&:hover {
+						background-color: white;
+						color: black;
+					}
+				}
+			}
+		}
+	}
+}
