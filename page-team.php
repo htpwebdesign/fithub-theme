@@ -55,7 +55,7 @@ get_header();
 				<?php if (get_field('team_description')) :?>
 
 				<p><?php echo get_field('team_description'); ?> </p>
-				<h3>What they Offer</h3>
+				<h3>What they Offer:</h3>
 				<?php 
 				endif;
 
