@@ -138,7 +138,7 @@ get_header();
 		<!-- Post Secton -->
 		<section class="blog-menu">
 			<a href="<?php echo get_permalink(get_option('page_for_posts')); ?>">
-				<h2>React to Our Blog</h2>
+				<h2>React to our Blog</h2>
 			</a>
 			<?php
 				$args = array(
