@@ -51,9 +51,16 @@ input[type="submit"] {
 		tbody {
 			tr {
 				.actions {
-					.coupon {
-						button {
-							padding: 0.4em 1em;
+					button {
+						padding: 0.4em 1em;
+						border: 2px solid black;
+						padding: 5px 10px;
+						background-color: black;
+						color: white;
+
+						&:hover {
+							background-color: white;
+							color: black;
 						}
 					}
 				}
