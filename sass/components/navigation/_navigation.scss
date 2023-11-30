@@ -257,6 +257,46 @@
 	}
 }
 
+.site-footer {
+	.menu-footer-menu-container {
+		ul {
+			display: flex;
+			position: relative;
+			
+			li {
+				margin: 0 10px;
+
+				a {
+					text-decoration: none;
+					color: black;
+					font-weight: 500;
+				}
+
+				& > a::before {
+					content: '';
+					height: 4px;
+					background: #8A0000;
+					display: inline-block;
+					position: absolute;
+					bottom: 0;
+					width: 0;
+					transition: width 0.3s;
+				}
+				
+				&:hover > a::before {
+					width: 42%;
+				}
+
+				&:nth-child(1)::after {
+					content: '|';
+					position: absolute;
+					left: calc(50% - 5px);
+				}
+			}
+		}
+	}
+}
+
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
