@@ -22,9 +22,9 @@
 	margin: 0 0 1.5em;
 }
 
-.blog-page-posts p{
+.blog-page-posts p {
 	padding: 0 1rem;
-	width: 40rem;
+	max-width: 40rem;
 	margin: 0 auto;
 	text-align: left;
 }
@@ -106,13 +106,6 @@ nav.woocommerce-MyAccount-navigation {
 	}
 }
 
-
-// form.woocommerce-EditAccountForm.edit-account {
-// 	display: flex;
-// 	flex-direction: column;
-
-// 	p {
-// 		display: flex;
-// 		justify-content: center;
-// 	}
-// }
+div.product-container {
+	margin-top: 4rem;
+}
