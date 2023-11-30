@@ -1,4 +1,8 @@
 .site {
+	.site-header {
+		margin-top: 10px;
+	}
+
 	display: grid;
 	grid-template-columns: auto;
 	grid-template-areas:
@@ -22,7 +26,7 @@
 
 			a {
 				&:hover > svg {
-					fill: red;
+					fill: #8A0000;
 				}
 			}
 		}

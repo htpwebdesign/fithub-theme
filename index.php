@@ -52,9 +52,12 @@ get_header();
 
 		endif;
 		?>
-		<?php
-			echo do_shortcode( '[instagram-feed feed=1]' ); 
-		?>
+		<div class="instagram">
+		<h2>Inspect our Instagram</h2>
+			<?php
+				echo do_shortcode( '[instagram-feed feed=1]' ); 
+			?>
+		</div>
 
 		</div>
 	</main><!-- #main -->

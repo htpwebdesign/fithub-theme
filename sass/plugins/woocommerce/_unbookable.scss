@@ -2,11 +2,16 @@
     .site-main {
         .woocommerce-message {
             display: flex;
-            flex-direction: column;
+            flex-direction: column-reverse;
             align-items: center;
-            justify-content: center;
+            padding: 10px 0;
             color: white;
-            padding: 10px;
+
+            @media screen and (min-width: 37.5em) {
+                flex-direction: row-reverse;
+                padding: 15px 40px;
+                justify-content: space-evenly;
+            }
 
             a {
                 border: 2px solid black;
@@ -14,6 +19,11 @@
                 color: white;
                 max-width: fit-content;
                 padding: 5px 10px;
+                margin-top: 10px;
+
+                @media screen and (min-width: 37.5em) {
+                    margin-top: 0;
+                }
 
                 &:hover {
                     background-color: white;
@@ -46,6 +56,10 @@
             }
 
             .woocommerce-tabs {
+                width: 80%;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
                 margin-bottom: 4rem;
 
                 ul {
@@ -79,6 +93,8 @@
                 }
 
                 .woocommerce-Tabs-panel--reviews {
+                    width: 100%;
+
                     .comment-respond {
                         padding: 0 25px;
                     }
@@ -145,6 +161,11 @@
                 }
 
                 .woocommerce-tabs {
+                    flex-direction: row;
+
+                    ul {
+                        flex-direction: column;
+                    }
 
                     .woocommerce-Tabs-panel--description {
                         padding: 0 60px;

@@ -1,14 +1,17 @@
-body {
-	background: $color__background-body; // Fallback for when there is no custom background color defined.
-	width: 100%;
-	// max-width: 1920px;
-	margin: 0 auto;
+html {
+	margin-top: 0 !important;
 }
 
-.site-main{
+body {
+	background: $color__background-body; // Fallback for when there is no custom background color defined.
+}
+
+.site {
 	max-width: 1920px;
 	margin: 0 auto;
+	margin-top: 0;
 }
+
 .site-footer{
 	background-color: #ffffff;
 }

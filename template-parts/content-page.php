@@ -11,7 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php fithub_theme_post_thumbnail(); ?>
+	<?php fithub_theme_post_thumbnail('medium_large'); ?>
 
 	<div class="entry-content">
 		<?php

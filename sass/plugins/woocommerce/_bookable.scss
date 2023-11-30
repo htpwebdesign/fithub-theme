@@ -1,26 +1,5 @@
 .site {
     .site-main {
-        .woocommerce-message {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            padding: 10px;
-
-            a {
-                border: 2px solid black;
-                background-color: black;
-                color: white;
-                max-width: fit-content;
-                padding: 5px 10px;
-
-                &:hover {
-                    background-color: white;
-                    color: black;
-                }
-            }
-        }
 
         .product-type-booking {
             .product-container {
@@ -44,6 +23,10 @@
             }
 
             .woocommerce-tabs {
+                width: 80%;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
                 margin-bottom: 4rem;
 
                 ul {
@@ -77,12 +60,9 @@
                 }
 
                 .woocommerce-Tabs-panel--reviews {
-                    .woocommerce-Reviews {
-                        ol {
-                            padding: 0;
-                            margin: 0;
-                        }
+                    width: 100%;
 
+                    .woocommerce-Reviews {
                         .comment-respond {
                             padding: 0 25px;
                         }
@@ -110,6 +90,12 @@
 
             .product-type-booking {
                 .woocommerce-tabs {
+                    flex-direction: row;
+                    
+                    ul {
+                        flex-direction: column;
+                    }
+
                     .woocommerce-Tabs-panel {
                         .comment-respond {
                             padding: 0 60px;

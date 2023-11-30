@@ -33,36 +33,40 @@ get_header();
 
 		<!-- Team Secton -->
 		<section class="fithub-team" >
-		<h2>Team</h2>
-		<?php
-			$args = array(
-				'post_type'	=> 'fithub-team',
-				'posts_per_page' => -1
-			);
-			$team_query = new WP_Query($args);
-			if ($team_query->have_posts()) {
-				while ($team_query->have_posts()) {
-					$team_query->the_post();
-			?>
-				<article>
-				<h3><?php the_title(); ?></h3>
-                <?php the_post_thumbnail('medium'); ?>
-                <?php the_excerpt(); ?>
-				<br>
-                <button onclick="window.location='<?php echo esc_url( get_page_link( 111 ) ); ?>'">
-					<h3>Check our Team</h3>
-                </button>
-            </article>
+			<a href="<?php echo esc_url(get_permalink(get_page_by_path('team'))); ?>">
+				<h2>The FitHub Team</h2>
+			</a>
 			<?php
+				$args = array(
+					'post_type'	=> 'fithub-team',
+					'posts_per_page' => -1
+				);
+				$team_query = new WP_Query($args);
+				if ($team_query->have_posts()) {
+					while ($team_query->have_posts()) {
+						$team_query->the_post();
+				?>
+					<article>
+					<h3><?php the_title(); ?></h3>
+					<?php the_post_thumbnail('medium'); ?>
+					<?php the_excerpt(); ?>
+					<br>
+					<button onclick="window.location='<?php echo esc_url( get_page_link( 111 ) ); ?>'">
+						<h3>Check our Team</h3>
+					</button>
+				</article>
+				<?php
+					}
+					wp_reset_postdata();
 				}
-				wp_reset_postdata();
-			}
-		?>
+			?>
 		</section>
 
 		<!-- Service Secton -->
 		<section class="services-menu">
-			<h2>Services We Offer</h2>
+			<a href="<?php echo get_term_link('services', 'product_cat'); ?>">
+				<h2>Services We Offer</h2>
+			</a>
 			<?php
 				$args = array(
 					'post_type'	=> 'product',
@@ -75,90 +79,97 @@ get_header();
 						)
 					)
 				);
-			$service_query = new WP_Query($args);
-			if ($service_query->have_posts()) {
-				while ($service_query->have_posts()) {
-					$service_query->the_post();
-			?>
-			<article>
-				<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail('large'); ?>
-					<h3><?php the_title(); ?></h3>
-				</a>
-			</article>
-			<?php
-				}
-				wp_reset_postdata();
-			}
-		?>
-		</section>
-
-		<!-- Product Secton -->
-		<section class="products-menu">
-		<h2>Our Array of Products</h2>
-		<?php
-			$args = array(
-				'post_type'	=> 'product',
-				'posts_per_page' => 3,
-				'order' => 'ASC',
-				'orderby' => 'title',
-				'tax_query'      => array(
-					array(
-						'taxonomy' => 'product_cat',
-						'field' => 'slug',
-						'terms' => 'services',
-						'operator' => 'NOT IN',
-					)
-				)
-			);
-			$product_query = new WP_Query($args);
-			if ($product_query->have_posts()) {
-				while ($product_query->have_posts()) {
-					$product_query->the_post();
-			?>
+				$service_query = new WP_Query($args);
+				if ($service_query->have_posts()) {
+					while ($service_query->have_posts()) {
+						$service_query->the_post();
+				?>
 				<article>
 					<a href="<?php the_permalink(); ?>">
 					<?php the_post_thumbnail('large'); ?>
 						<h3><?php the_title(); ?></h3>
 					</a>
 				</article>
-			<?php
+				<?php
+					}
+					wp_reset_postdata();
 				}
-				wp_reset_postdata();
-			}
-		?>
+			?>
 		</section>
 
+		<!-- Product Secton -->
+		<section class="products-menu">
+			<a href="<?php echo get_post_type_archive_link('product'); ?>">
+				<h2>Our Array of Products</h2>
+			</a>
+			<?php
+				$args = array(
+					'post_type'	=> 'product',
+					'posts_per_page' => 3,
+					'order' => 'ASC',
+					'orderby' => 'title',
+					'tax_query'      => array(
+						array(
+							'taxonomy' => 'product_cat',
+							'field' => 'slug',
+							'terms' => 'services',
+							'operator' => 'NOT IN',
+						)
+					)
+				);
+				$product_query = new WP_Query($args);
+				if ($product_query->have_posts()) {
+					while ($product_query->have_posts()) {
+						$product_query->the_post();
+				?>
+					<article>
+						<a href="<?php the_permalink(); ?>">
+						<?php the_post_thumbnail('large'); ?>
+							<h3><?php the_title(); ?></h3>
+						</a>
+					</article>
+				<?php
+					}
+					wp_reset_postdata();
+				}
+			?>
+		</section>
+	
 		<!-- Post Secton -->
 		<section class="blog-menu">
-		<h2>React to Our Blog</h2>
-		<?php
-			$args = array(
-				'post_type'	=> 'post',
-				'posts_per_page' => 3,
-				'order' => 'ASC',
-				'orderby' => 'title',
-			);
-			$blog_query = new WP_Query($args);
-			if ($blog_query->have_posts()) {
-				while ($blog_query->have_posts()) {
-					$blog_query->the_post();
-			?>
-				<article>
-					<a href="<?php the_permalink(); ?>">
-						<?php the_post_thumbnail('large'); ?>
-						<h3><?php echo substr(get_the_title(), 0, 30); ?>...</h3>
-					</a>
-				</article>
+			<a href="<?php echo get_permalink(get_option('page_for_posts')); ?>">
+				<h2>React to our Blog</h2>
+			</a>
 			<?php
+				$args = array(
+					'post_type'	=> 'post',
+					'posts_per_page' => 3,
+					'order' => 'ASC',
+					'orderby' => 'title',
+				);
+				$blog_query = new WP_Query($args);
+				if ($blog_query->have_posts()) {
+					while ($blog_query->have_posts()) {
+						$blog_query->the_post();
+				?>
+					<article>
+						<a href="<?php the_permalink(); ?>">
+							<?php the_post_thumbnail('large'); ?>
+							<h3><?php echo substr(get_the_title(), 0, 30); ?>...</h3>
+						</a>
+					</article>
+				<?php
+					}
+					wp_reset_postdata();
 				}
-				wp_reset_postdata();
-			}
-		?>
+			?>
 		</section>
-		<?php
-			echo do_shortcode( '[instagram-feed feed=1]' ); 
-		?>
+		<div class="instagram">
+		<h2>Inspect our Instagram</h2>
+			<?php
+				echo do_shortcode( '[instagram-feed feed=1]' ); 
+			?>
+		</div>
 
 	</main><!-- #main -->
 

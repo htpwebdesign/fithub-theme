@@ -47,7 +47,7 @@ get_header();
 				$query->the_post();
 				if (function_exists('get_field')) :
 			?>
-			<article>
+			<article class="team-page">
 				<?php the_post_thumbnail('medium'); ?>
 
 				<h3><?php echo get_the_title(); ?></h3>
@@ -55,28 +55,28 @@ get_header();
 				<?php if (get_field('team_description')) :?>
 
 				<p><?php echo get_field('team_description'); ?> </p>
-				<h3>What they Offer</h3>
+				<h3>What they Offer:</h3>
 				<?php 
 				endif;
 
 				if (get_field('first_service')) :
 					$link = get_field("first_service");
-					if ($link): 
-				?>
+					if ($link): ?>
 						<a class="button" href="<?php echo esc_url( $link['url'] ); ?>">
 							<h3><?php echo esc_html( $link['title'] ); ?></h3>
 						</a>				
 				<?php 
-					endif;
 				endif;
-						if (get_field('second_service')) :
-							$link = get_field("second_service");
-							if ($link): ?>
-								<a class="button" href="<?php echo esc_url( $link['url'] ); ?>">
-									<h3><?php echo esc_html( $link['title'] ); ?></h3>
-								</a>
-							<?php endif;
-						endif; ?>
+				endif;
+				if (get_field('second_service')) :
+					$link = get_field("second_service");
+					if ($link): ?>
+						<a class="button" href="<?php echo esc_url( $link['url'] ); ?>">
+							<h3><?php echo esc_html( $link['title'] ); ?></h3>
+						</a>
+				<?php 
+				endif;
+					endif; ?>
 			</article>
 						<?php
 					endif;
