@@ -33,9 +33,11 @@ get_header();
 
 		<!-- Team Secton -->
 		<section class="fithub-team" >
-			<a href="<?php echo esc_url(get_permalink(get_page_by_path('team'))); ?>">
-				<h2>The FitHub Team</h2>
-			</a>
+			<h1>
+				<a href="<?php echo esc_url(get_permalink(get_page_by_path('team'))); ?>">
+					The FitHub Team
+				</a>
+			</h1>
 			<?php
 				$args = array(
 					'post_type'	=> 'fithub-team',
@@ -64,9 +66,11 @@ get_header();
 
 		<!-- Service Secton -->
 		<section class="services-menu">
-			<a href="<?php echo get_term_link('services', 'product_cat'); ?>">
-				<h2>Services We Offer</h2>
-			</a>
+			<h1>
+				<a href="<?php echo get_term_link('services', 'product_cat'); ?>">
+					Services We Offer
+				</a>
+			</h1>
 			<?php
 				$args = array(
 					'post_type'	=> 'product',
@@ -99,9 +103,11 @@ get_header();
 
 		<!-- Product Secton -->
 		<section class="products-menu">
-			<a href="<?php echo get_post_type_archive_link('product'); ?>">
-				<h2>Our Array of Products</h2>
-			</a>
+			<h1>
+				<a href="<?php echo get_post_type_archive_link('product'); ?>">
+					Our Array of Products
+				</a>
+			</h1>
 			<?php
 				$args = array(
 					'post_type'	=> 'product',
@@ -137,9 +143,11 @@ get_header();
 	
 		<!-- Post Secton -->
 		<section class="blog-menu">
-			<a href="<?php echo get_permalink(get_option('page_for_posts')); ?>">
-				<h2>React to our Blog</h2>
-			</a>
+			<h1>
+				<a href="<?php echo get_permalink(get_option('page_for_posts')); ?>">
+					React to our Blog
+				</a>
+			</h1>
 			<?php
 				$args = array(
 					'post_type'	=> 'post',
@@ -165,7 +173,7 @@ get_header();
 			?>
 		</section>
 		<div class="instagram">
-		<h2>Inspect our Instagram</h2>
+		<h1>Inspect our Instagram</h1>
 			<?php
 				echo do_shortcode( '[instagram-feed feed=1]' ); 
 			?>
