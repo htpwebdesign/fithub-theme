@@ -94,9 +94,11 @@ if ( woocommerce_product_loop() ) {
 				if ($product_query->have_posts()) :
 	?>
 				<section class="shop">
-					<a href="<?php echo esc_url($category_link); ?>">
-           				 <h2><?php echo esc_html__($term->name); ?></h2>
-        			</a>
+					<h2>
+						<a href="<?php echo esc_url($category_link); ?>">
+							<?php echo esc_html__($term->name); ?>
+						</a>
+					</h2>
 					<article>
 						<?php
 							while ($product_query->have_posts()) :
