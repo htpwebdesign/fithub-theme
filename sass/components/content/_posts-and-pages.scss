@@ -85,12 +85,16 @@ div#customer_login.u-columns.col2-set {
 
 	p {
 		flex-direction: column;
+		width: 90%;
 		max-width: 30rem;
 		margin: 0.8rem auto;
 		display: flex;
 		justify-content: flex-start;
 		text-align: left;
 		label {
+			text-align: left;
+		}
+		input {
 			text-align: left;
 		}
 		input#password.woocommerce-Input.woocommerce-Input--text.input-text  {
@@ -110,18 +114,64 @@ form.woocommerce-EditAccountForm.edit-account {
 		display: flex;
 		justify-content: flex-start;
 		text-align: left;
-		width: 100%;
+		width: 90%;
 
 		label,
 		span,
 		input {
 			text-align: left;
 		}
+	}
 
+	fieldset {
+		width: 90%;
+		margin: 0 auto;
 		input {
 			width: 100%;
 		}
 	}
+}
+
+// div.woocommerce-MyAccount-content {
+// 	max-width: 25rem;
+// 	div.u-columns.woocommerce-Addresses.col2-set.addresses {
+// 		display: flex;
+// 		flex-direction: column;
+// 		justify-content: flex-start;
+// 		div.u-column1.col-1.woocommerce-Address {
+// 			header.woocommerce-Address-title.title {
+// 				h3 {
+// 					text-align: left;
+// 				}
+// 				text-align: left;
+// 			}
+// 		}
+// 	}
+// }
+
+div.woocommerce-address-fields {
+	display: flex;
+	flex-direction: column;
+
+	p {
+		flex-direction: column;
+		max-width: 20rem;
+		margin: 0.8rem auto;
+		display: flex;
+		justify-content: flex-start;
+		text-align: left;
+		width: 90%;
+
+		label,
+		span,
+		input {
+			text-align: left;
+		}
+		input {
+			width: 100%;
+		}
+	}
+
 }
 
 nav.woocommerce-MyAccount-navigation {
