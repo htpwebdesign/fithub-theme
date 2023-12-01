@@ -1,21 +1,67 @@
 @media screen and (min-width: 768px) {
 
+	.checkout{
+		display:grid;
+		grid-gap:2rem;
+		grid-template-columns: 70% 30%;
+		grid-template-rows:10% 90%;
+		
+	}
+	
+	.woocommerce-info{
+		// coupon message - want it on left side of grid
+		grid-column:1;
+		grid-row:1;
+	}
+
 	.col2-set {
-
-		.form-row-first {
-			float: left;
-			margin-right: $columns__margin;
-		}
-
-		.form-row-last {
-			float: right;
-			margin-right: 0;
-		}
+		// the billing details
+		grid-column: 1;
+		grid-row:2;
+		display: grid ;
+		border:solid;
+		
 
 		.form-row-first,
-		.form-row-last {
-
-			@include column-width(2);
+		.form-row-last,
+		.form-row-wide
+		 {
+			margin-left:0;
+			// @include column-width(1);
 		}
+
+		
 	}
+
+	.order_review_heading{
+		// Your Order title
+		grid-column:2;
+		grid-row:1;
+	}
+	.woocommerce-checkout-review-order{
+		// affects product price total section
+		// border:solid;
+		grid-column:2;
+		grid-row:2;
+	}
+	// end of order review
+	// use color to find what inputs are being affected
+	.woocommerce-input-wrapper .select2-container {
+		// affects country/region select but having trouble overwriting style in element folder
+		
+			// display: block;
+			// width:50%;
+	}
+		
+		
+	// }
+	// .validate-email{
+	// 	color:blue;
+	// 	float:left;
+	// 	margin-right: $columns__margin;
+	// 	// having trouble lining up margin to match first name
+	// }
 }
+// end of media query
+
+	
