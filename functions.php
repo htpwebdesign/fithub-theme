@@ -55,12 +55,11 @@ add_action('wp_dashboard_setup', 'my_custom_dashboard_widget');
   
 function my_custom_dashboard_widget() {
     global $wp_meta_boxes;
-    wp_add_dashboard_widget('custom_fun_widget', 'Fun Time', 'custom_dashboard_fun');
+    wp_add_dashboard_widget('custom_fun_widget', 'Backend tutorial', 'custom_dashboard_fun');
 }
  
 function custom_dashboard_fun() {
-	echo 'My record is 178. Try and
-    <a href="https://gearoid.me/pokemon/" target="_blank">beat my score</a>';
+	echo '<iframe  src="https://www.youtube.com/embed/V4tucbc-FuA?si=WxzGh5WcgzRTFYCk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
 }
 
 // remove default dashboards outside of using screen options
