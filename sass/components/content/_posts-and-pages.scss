@@ -133,7 +133,8 @@ form.woocommerce-EditAccountForm.edit-account {
 }
 
 article#post-271.post-271.page.type-page.status-publish.hentry,
-article#post-3.post-3.page.type-page.status-publish.hentry {
+article#post-3.post-3.page.type-page.status-publish.hentry,
+article#post-30.post-30.page.type-page.status-publish.hentry {
 	display: flex;
 	flex-direction: column;
 	width: 95%;
@@ -142,8 +143,14 @@ article#post-3.post-3.page.type-page.status-publish.hentry {
 
 	h2,
 	h3,
-	p {
+	p,
+	li {
 		text-align: left;
+	}
+
+	li {
+		list-style: disc;
+		margin-left: 1rem;
 	}
 }
 
