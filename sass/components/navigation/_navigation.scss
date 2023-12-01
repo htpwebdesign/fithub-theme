@@ -288,7 +288,7 @@
 				}
 
 				&:nth-child(1)::after {
-					content: '|';
+					// content: '|';
 					position: absolute;
 					left: calc(50% - 5px);
 				}
