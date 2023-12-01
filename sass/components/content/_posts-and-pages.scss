@@ -132,22 +132,19 @@ form.woocommerce-EditAccountForm.edit-account {
 	}
 }
 
-// div.woocommerce-MyAccount-content {
-// 	max-width: 25rem;
-// 	div.u-columns.woocommerce-Addresses.col2-set.addresses {
-// 		display: flex;
-// 		flex-direction: column;
-// 		justify-content: flex-start;
-// 		div.u-column1.col-1.woocommerce-Address {
-// 			header.woocommerce-Address-title.title {
-// 				h3 {
-// 					text-align: left;
-// 				}
-// 				text-align: left;
-// 			}
-// 		}
-// 	}
-// }
+article#post-271.post-271.page.type-page.status-publish.hentry,
+article#post-3.post-3.page.type-page.status-publish.hentry {
+	display: flex;
+	flex-direction: column;
+	width: 95%;
+	max-width: 45rem;
+	margin: 0 auto;
+
+	h2,
+	p {
+		text-align: left;
+	}
+}
 
 div.woocommerce-address-fields {
 	display: flex;

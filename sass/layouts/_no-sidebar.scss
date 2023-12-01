@@ -35,13 +35,15 @@
 				a {
 					display: flex;
 					align-items: center;
+					text-decoration: none;
+					color: black;
 	
 					&:hover > svg {
-						fill: red;
+						fill: #8A0000;
 					}
 
 					&:hover {
-						color: yellow;
+						color: #8A0000;
 					}
 				}
 
