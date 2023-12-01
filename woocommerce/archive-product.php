@@ -91,7 +91,7 @@ if ( woocommerce_product_loop() ) {
 
 				$product_query = new WP_Query($args);
 
-				if ($product_query->have_posts()) :
+				if ($product_query->have_posts() && $term->slug !== 'services') :
 	?>
 				<section class="shop">
 					<h2>
