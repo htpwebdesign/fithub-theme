@@ -175,7 +175,7 @@ get_header();
 		<div class="instagram">
 		<h1>Inspect our Instagram</h1>
 			<?php
-				echo do_shortcode( '[instagram-feed feed=1]' ); 
+				echo do_shortcode( '[instagram-feed feed=2]' ); 
 			?>
 		</div>
 

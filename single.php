@@ -34,7 +34,7 @@ get_header();
 			<div class="instagram">
 			<h2>Inspect our Instagram</h2>
 				<?php
-					echo do_shortcode( '[instagram-feed feed=1]' ); 
+					echo do_shortcode( '[instagram-feed feed=2]' ); 
 				?>
 			</div>
 			<?php
