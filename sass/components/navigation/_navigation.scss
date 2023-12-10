@@ -9,7 +9,7 @@
 		bottom: 0;
 		background-color: black;
 		height: 60px;
-		z-index: 99999;
+		z-index: 1000;
 		margin: 0;
 		
 		.home-icon,
@@ -85,7 +85,7 @@
 						position: absolute;
 						top: -5px;
 						left: -999em;
-						z-index: 99999;
+						z-index: 1000;
 						padding: 5px 0;
 						width: max-content;
 						
